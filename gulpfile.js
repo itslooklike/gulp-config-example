@@ -16,6 +16,6 @@ $.path.task.forEach(task => {
   require(task)();
 });
 
-$.gulp.task('build', $.gulp.series('clean', $.gulp.parallel('sass', 'pug')));
+$.gulp.task('build', $.gulp.series('clean', $.gulp.parallel('sass', 'rollup', 'pug')));
 
 $.gulp.task('default', $.gulp.series('build', $.gulp.parallel('watch', 'serve')));
