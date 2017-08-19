@@ -1,11 +1,11 @@
-'use strict';
-
 const pug = $.gp['pug'];
+const plumber = $.gp['plumber'];
 
 module.exports = () => {
   $.gulp.task('pug', () =>
     $.gulp
-      .src('./src/pug/**/*.pug')
+      .src('./src/pug/pages/*.pug')
+      .pipe(plumber())
       .pipe(
         pug({
           pretty: true,

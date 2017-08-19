@@ -1,8 +1,7 @@
-'use strict';
-
 const srcFolder = $.path.srcFolder;
-
-const [rollup, sourcemaps, plumber] = [$.gp['rollup'], $.gp['sourcemaps'], $.gp['plumber']];
+const rollup = $.gp['rollup'];
+const sourcemaps = $.gp['sourcemaps'];
+const plumber = $.gp['plumber'];
 
 module.exports = () => {
   $.gulp.task('rollup', () =>

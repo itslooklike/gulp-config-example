@@ -1,1 +1,8 @@
-@import './header/header';
+/* stylelint-disable at-rule-empty-line-before */
+@import './variables';
+@import './mixins/index';
+
+@import './base/font-face';
+@import './base/base';
+
+@import './blocks/**/*.scss';

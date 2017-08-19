@@ -1,0 +1,66 @@
+@mixin retina($url, $scale: 3, $ext: png) {
+  $dpi: 96;
+  $descender: 0.5;
+
+  background-image: url($url + '.' + $ext);
+
+  @if $scale > 1 {
+    @for $i from 2 through $scale {
+      @media (min-resolution: ($i - $descender) * ($dpi)+dpi),
+        (min-resolution: ($i - $descender)+dppx) {
+        background-image: url($url + '@' + $i + 'x.' + $ext);
+      }
+    }
+  }
+}
+
+@mixin btn-reset {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+@mixin visuallyhidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@mixin response-block($width, $height) {
+  $inset: #{$height / 1px}#{unquote("%")};
+  $offset: $width / 1px / 100;
+
+  padding-bottom: calc(#{$inset} / #{$offset});
+}
+
+@mixin response-bg($width, $height) {
+  width: $width;
+  background-size: cover;
+  background-position: 50% 50%;
+
+  &::before {
+    @include response-block($width, $height);
+
+    content: '';
+    display: block;
+  }
+}

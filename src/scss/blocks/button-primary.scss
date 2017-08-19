@@ -1,0 +1,15 @@
+.button-primary {
+  @include btn-reset;
+
+  padding: 14px 35px 17px;
+  border-radius: 5px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+
+  &--full {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

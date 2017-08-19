@@ -1,8 +1,10 @@
-'use strict';
+const path = require('path');
+
+global.gulpConfigFolder = path.join(__dirname, 'gulp-config');
 
 global.$ = {
   path: {
-    task: require('./gulp/path/tasks.js'),
+    task: require(`${global.gulpConfigFolder}/path/tasks.js`),
     buildFolder: './build',
     srcFolder: './src',
   },
@@ -16,6 +18,9 @@ $.path.task.forEach(task => {
   require(task)();
 });
 
-$.gulp.task('build', $.gulp.series('clean', $.gulp.parallel('sass', 'rollup', 'pug')));
+$.gulp.task(
+  'build',
+  $.gulp.series('clean', $.gulp.parallel('sass', 'stylelint', 'eslint', 'rollup', 'copy', 'pug'))
+);
 
 $.gulp.task('default', $.gulp.series('build', $.gulp.parallel('watch', 'serve')));

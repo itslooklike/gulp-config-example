@@ -1,0 +1,27 @@
+@font-face {
+  font-family: SOMEFONT;
+  font-weight: 100;
+  src: url('#{$font-url}/SOMEFONT-light.woff2') format('woff2'),
+    url('#{$font-url}/SOMEFONT-light.woff') format('woff');
+}
+
+@font-face {
+  font-family: SOMEFONT;
+  font-weight: normal;
+  src: url('#{$font-url}/SOMEFONT-regular.woff2') format('woff2'),
+    url('#{$font-url}/SOMEFONT-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: SOMEFONT;
+  font-weight: bold;
+  src: url('#{$font-url}/SOMEFONT-medium.woff2') format('woff2'),
+    url('#{$font-url}/SOMEFONT-medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: SOMEFONT;
+  font-weight: 900;
+  src: url('#{$font-url}/SOMEFONT-bold.woff2') format('woff2'),
+    url('#{$font-url}/SOMEFONT-bold.woff') format('woff');
+}

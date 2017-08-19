@@ -1,5 +1,3 @@
-'use strict';
-
 const buildFolder = $.path.buildFolder;
 
 module.exports = () => {
